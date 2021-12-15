@@ -1,6 +1,13 @@
 from dippy.core.enums.enums import IntFlag, IntEnum, StrEnum
 
 
+class EventStatus(IntEnum):
+    SCHEDULED = 1
+    ACTIVE = 2
+    COMPLETED = 3
+    CANCELED = 4
+
+
 class EventEntityType(IntEnum):
     STAGE_INSTANCE = 1
     VOICE = 2
