@@ -14,3 +14,17 @@ class ListScheduledEventsForGuild(RequestModel):
     guild_id: Snowflake = URLArgField(index=True)
     with_user_count: Optional[bool] = QueryArgField()
 
+
+class CreateGuildScheduledEvent(RequestModel):
+    endpoint = "/guilds/{guild.id}/scheduled-events"
+    method = "GET"
+
+    guild_id: Snowflake = URLArgField(index=True)
+    channel_id: Optional[Snowflake] = JSONArgField()
+    entity_metadata: Optional[EventEntityMetadata] = JSONArgField()
+    name: str = JSONArgField()
+    privacy_level: EventPrivacyLevel = JSONArgField()
+    scheduled_start_time: datetime = JSONArgField()
+    scheduled_end_time: Optional[datetime] = JSONArgField()
+    description: Optional[str] = JSONArgField()
+    entity_type: EventEntityType = JSONArgField()

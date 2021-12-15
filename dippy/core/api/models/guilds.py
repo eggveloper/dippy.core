@@ -21,6 +21,10 @@ import dippy.core.api.models.stickers as _stickers
 import dippy.core.api.models.users as _users
 
 
+class EventEntityMetadata(Model):
+    location: Optional[str]
+
+
 class VoiceState(Model):
     guild_id: Optional[Snowflake]
     channel_id: Optional[Snowflake]

@@ -1,6 +1,16 @@
 from dippy.core.enums.enums import IntFlag, IntEnum, StrEnum
 
 
+class EventEntityType(IntEnum):
+    STAGE_INSTANCE = 1
+    VOICE = 2
+    EXTERNAL = 3
+
+
+class EventPrivacyLevel(IntEnum):
+    GUILD_ONLY = 2  # the scheduled event is only accessible to guild members
+
+
 class VerificationLevel(IntEnum):
     NONE = 0  # unrestricted
     LOW = 1  # must have verified email on account
